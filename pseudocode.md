@@ -13,12 +13,10 @@ Because CPP and CPA involves two chambers, one of which is paired with the stimu
 
 
 The experiment itself contains three sessions: 
-the pre-exposure session, the training session, and the testing session.
+    The pre-exposure session, during which the mouse will be put into the alley connecting the two chambers and allowed to explore freely for 10 minutes. The time that the mouse spent in each place will be recorded.
+    The training session, which contains 8 trials. In the odd trials, each mouse will receive the assigned stimulus in their paired chamber at their assigned timepoint for 10 minutes. In the even trials, the mouse will be put into the unpaired chamber for 10 minutes without any stimulus. 
+    The testing session, during which the mouse will be put into the alley connecting the two chambers at its assigned testing time and allowed to explore freely for 10 minutes. The time that the mouse spent in each place will be recorded.
 
-During the pre-exposure session, the two chambers are connected with each other by an alley. The mouse will be put into the alley and allowed to explore both chambers and the alley for 10 minutes. The time that the mouse spent in each place will be recorded.
-The training session contains 8 trials. In the odd trials, each mouse will receive the assigned stimulus in their paired chamber at their assigned timepoint for 10 minutes. In the even trials, the mouse will be put into the unpaired chamber for 10 minutes without any stimulus. 
-During the test session, the two chambers are connected with each other by an alley. The mouse will be put into the alley and allowed to explore both chambers and the alley for 10 minutes at their assigned testing timepoint. The time that the mouse spent in each place will be recorded.
- 
 
 # Pseudocode
 ## Assigning subjects to different conditions
@@ -66,7 +64,7 @@ Assign paired and unpaired chambers to subject:
 ## 1. Pre-exposure Session
     record_duration(subject.paired_chamber, alley, subject.unpaired_chamber)
 
-## 2. Training Session:
+## 2. Training Session
     trials = [1, 2, 3, 4, 5, 6, 7, 8]
     for trial in trials:
         if is_odd(trial):
@@ -80,5 +78,5 @@ Assign paired and unpaired chambers to subject:
         else:
             no_stimulus(subject, subject.unpaired_chamber, time = subject.training_time)
         
-## 3. Testing Session:
+## 3. Testing Session
     record_duration(subject.paired_chamber, alley, subject.unpaired_chamber, time = subject.testing_time)
